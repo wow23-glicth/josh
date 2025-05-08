@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIT Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1e293b; /* Dark blue background */
+            color: #fff; /* White text */
+        }
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+        }
+        .heading-gradient {
+            background: linear-gradient(to right, #3b82f6, #2563eb); /* Blue gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-image-wrapper {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .gallery-image-wrapper:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            object-fit: cover; /* Maintain aspect ratio */
+            aspect-ratio: 16 / 9; /* Standard image aspect ratio */
+        }
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        .neon-button {
+            @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full text-white; /* Changed text color to white */
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            box-shadow: 0 0 6px rgba(99, 102, 241, 0.7);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite alternate;
+            font-size: 0.9rem;
+            margin-top: 2rem; /* Added margin-top */
+            display: inline-block; /* Ensure button doesn't take full width */
+            margin-left: 0; /* Reset left margin */
+        }
+        .neon-button:hover {
+            background: linear-gradient(to right, #4338ca, #4f46e5);
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.9);
+            transform: scale(1.05);
+        }
+        @keyframes pulse {
+            from {
+                opacity: 0.9;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the start (left in LTR) */
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-8">
+        <header class="mb-6 text-center">
+            <h1 class="text-3xl font-bold heading-gradient">School Gallery</h1>
+            <div class="header-content">
+                <a href="Admin.html" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">Back to Home</a>
+            </div>
+        </header>
+        <section class="gallery-grid">
+            <div class="gallery-image-wrapper">
+                <img src="pic1.jpg" alt="School 1" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic2.jpg" alt="School 2" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic3.jpg" alt="School 3" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic4.jpg" alt="School 4" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic5.jpg" alt="School 5" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic6.jpg" alt="School 6" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic7.jpg" alt="School 7" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic8.jpg" alt="School 8" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic9.jpg" alt="School 9" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic10.jpg" alt="School 10" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic11.jpg" alt="School 11" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic12.jpg" alt="School 12" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic13.jpg" alt="School 13" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic14.jpg" alt="School 14" class="gallery-image">
+            </div>
+            <div class="gallery-image-wrapper">
+                <img src="pic15.jpg" alt="School 15" class="gallery-image">
+            </div>
+        </section>
+    </div>
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery-image');
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                const largeImageUrl = img.src.replace('400x300', '800x600');
+                window.open(largeImageUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

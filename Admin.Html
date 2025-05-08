@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOUTHERN MINDANAO INSTITUTE OF TECHNOLOGY INC.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6; /* Light background */
+    }
+    .heading-gradient {
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glassmorphism {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 0.75rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .neon-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+      background: linear-gradient(to right, #facc15, #fde047);
+      box-shadow: 0 0 8px rgba(253, 224, 71, 0.6);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      animation: pulse-yellow 2s infinite alternate;
+    }
+    .neon-button:hover {
+      background: linear-gradient(to right, #eab308, #facc15);
+      box-shadow: 0 0 12px rgba(234, 179, 8, 0.7);
+      transform: scale(1.05);
+    }
+    @keyframes pulse-yellow {
+      from {
+        opacity: 0.95;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="py-6 text-center">
+      <div class="flex justify-center mb-6">
+        <img src="wew.png" alt="School Logo" class="w-36 h-36 rounded-full bg-yellow-100 shadow-lg object-cover border-4 border-yellow-300" />
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-bold heading-gradient">Welcome to SMIT</h1>
+      <p class="text-yellow-600 mt-3 text-lg sm:text-xl">Sa SMIT <span class="text-blue-500">Matutupad</span> ang <span class="text-yellow-500">Pangarap mo</span>.</p>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="py-4 text-center">
+      <ul class="flex justify-center flex-wrap gap-4 sm:gap-6">
+        <li><a href="#home" class="text-blue-600 hover:text-yellow-500 transition-colors">Home</a></li>
+        <li><a href="#about" class="text-blue-600 hover:text-yellow-500 transition-colors">About</a></li>
+        <li><a href="gallery.html" class="text-blue-600 hover:text-yellow-500 transition-colors">Gallery</a></li>
+        <li><a href="dash.html" class="text-blue-600 hover:text-yellow-500 transition-colors">Dashboard</a></li>
+        <li><a href="#services" class="text-blue-600 hover:text-yellow-500 transition-colors">Services</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="py-20 text-center bg-yellow-100 rounded-xl shadow-xl mb-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-blue-700 mb-4">Discover Your Future at SMIT</h2>
+      <p class="text-blue-600 text-lg md:text-xl mb-6">Enroll now and take the first step toward a brighter future.</p>
+      <a href="#about" class="neon-button">Get Started</a>
+    </section>
+
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="py-10">
+        <h2 class="text-2xl font-semibold text-yellow-600 mb-4 text-center">Home</h2>
+        <div class="glassmorphism p-6">
+          <p class="text-blue-800 text-lg">
+            Welcome to SMIT – Your Gateway to Quality Education in Mindanao. At the Southern Mindanao Institute of Technology (SMIT), we are committed to nurturing future leaders and innovators through academic excellence, transformative education, and strong community values.
+          </p>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-10">
+        <h2 class="text-2xl font-semibold text-yellow-600 mb-4 text-center">About Admissions</h2>
+        <div class="glassmorphism p-6 space-y-6 text-blue-800">
+          <div>
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Admission Requirements</h3>
+            <p><strong>A. Freshmen Enrollees:</strong></p>
+            <ol class="list-decimal list-inside mt-2">
+              <li>Form 138 (High School Card)</li>
+              <li>Good moral certificate from high school principal</li>
+              <li>Passed SMIT admission exam (if required)</li>
+            </ol>
+            <p class="mt-4"><strong>B. Transferees:</strong></p>
+            <ol class="list-decimal list-inside mt-2">
+              <li>Honorable Dismissal</li>
+              <li>Certificate of Good Moral Character</li>
+              <li>Transcript with grades and credits for evaluation</li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Conditional Admission</h3>
+            <p>Students who failed three subjects last semester may be admitted conditionally under probationary status.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Refused Re-admission</h3>
+            <ol class="list-decimal list-inside">
+              <li>No academic improvement on probation</li>
+              <li>Poor health</li>
+              <li>Disciplinary issues</li>
+              <li>Three subject failures last term</li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Our Mission</h3>
+            <p>To create a safe, inclusive, and academically challenging environment where students can thrive and reach their full potential.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Our Vision</h3>
+            <p>To be a leading educational institution producing innovative thinkers, effective communicators, and compassionate leaders.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Core Values</h3>
+            <ul class="list-disc list-inside">
+              <li><strong>Excellence:</strong> Always strive for the best.</li>
+              <li><strong>Integrity:</strong> Be honest and accountable.</li>
+              <li><strong>Collaboration:</strong> Work together.</li>
+              <li><strong>Inclusivity:</strong> Embrace diversity.</li>
+              <li><strong>Innovation:</strong> Stay creative and grow.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-10">
+        <h2 class="text-2xl font-semibold text-yellow-600 mb-6 text-center">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="glassmorphism p-6 hover:shadow-yellow-200 transition duration-300">
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Student Support</h3>
+            <p>We provide counseling, tutoring, and educational support programs to help students thrive.</p>
+          </div>
+          <div class="glassmorphism p-6 hover:shadow-yellow-200 transition duration-300">
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Parent Resources</h3>
+            <p>We keep parents involved through workshops, newsletters, and real-time portals.</p>
+          </div>
+          <div class="glassmorphism p-6 hover:shadow-yellow-200 transition duration-300">
+            <h3 class="text-lg font-semibold text-yellow-700 mb-2">Community Engagement</h3>
+            <p>We build strong ties with local communities through outreach and partnerships.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-yellow-600">
+      <p>&copy; 2025 <span class="text-blue-500">SMIT</span>. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

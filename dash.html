@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUTHERN MINDANAO INSTITUTE OF TECHNOLOGY INC.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1e293b; /* Dark blue background */
+        }
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+        }
+        .heading-gradient {
+            background: linear-gradient(to right, #3b82f6, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .glassmorphism {
+            background-color: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(15px);
+            border-radius: 0.75rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-button {
+            @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full;
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            box-shadow: 0 0 6px rgba(99, 102, 241, 0.7);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite alternate;
+            font-size: 0.9rem;
+        }
+        .neon-button:hover {
+            background: linear-gradient(to right, #4338ca, #4f46e5);
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.9);
+            transform: scale(1.05);
+        }
+        @keyframes pulse {
+            from {
+                opacity: 0.9;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="container">
+        <header class="py-6 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold heading-gradient">Dashboard</h1>
+            <p class="text-gray-400 mt-3 text-lg sm:text-xl"></p>
+        </header>
+
+        <main class="py-10">
+            <a href="Admin.html" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">Back to Home</a>
+
+            <div class="glassmorphism p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-gray-300 mb-4">Dashboard Overview</h2>
+                <p class="text-gray-400 text-lg mb-4">
+                    Here's a quick overview of key information and statistics.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-200">Total Students</h3>
+                        <p class="text-xl text-white" id="totalStudents">0</p>
+                        <p class="text-sm text-gray-300">Elementary: <span id="elementaryCountOverview">0</span></p>
+                        <p class="text-sm text-gray-300">Junior High: <span id="juniorHighCountOverview">0</span></p>
+                        <p class="text-sm text-gray-300">Senior High: <span id="seniorHighCountOverview">0</span></p>
+                        <p class="text-sm text-gray-300">College: <span id="collegeCountOverview">0</span></p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-200">Total Teachers</h3>
+                        <p class="text-xl text-white" id="totalTeachers">0</p>
+                         <p class="text-sm text-gray-300">Elementary: <span id="elementaryTeacherCountOverview">0</span></p>
+                        <p class="text-sm text-gray-300">Junior High: <span id="juniorHighTeacherCountOverview">0</span></p>
+                        <p class="text-sm text-gray-300">Senior High: <span id="seniorHighTeacherCountOverview">0</span></p>
+                        <p class="text-sm text-gray-300">College: <span id="collegeTeacherCountOverview">0</span></p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-200">Upcoming Events</h3>
+                        <p class="text-xl text-white" id="upcomingEventsCount">0</p>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold text-gray-200 mb-2">Upcoming Events</h3>
+                    <ul class="list-disc list-inside text-gray-400" id="eventList">
+                        <li>No upcoming events</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glassmorphism p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-gray-300 mb-4">Student Data</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="studentLevel" class="block text-gray-200 text-sm font-bold mb-2">Student Level:</label>
+                        <select id="studentLevel" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                            <option value="elementary">Elementary</option>
+                            <option value="juniorhigh">Junior High</option>
+                            <option value="seniorhigh">Senior High</option>
+                            <option value="college">College</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="studentName" class="block text-gray-200 text-sm font-bold mb-2">Student Name:</label>
+                        <input type="text" id="studentName" placeholder="Enter student name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="studentId" class="block text-gray-200 text-sm font-bold mb-2">Student ID:</label>
+                        <input type="text" id="studentId" placeholder="Enter student ID" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="grade" class="block text-gray-200 text-sm font-bold mb-2">Grade/Year:</label>
+                        <input type="text" id="grade" placeholder="Enter grade/year" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="class" class="block text-gray-200 text-sm font-bold mb-2">Class/Section:</label>
+                        <input type="text" id="class" placeholder="Enter class/section" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                </div>
+                <button id="saveStudentData" class="neon-button mt-4">Save Student Data</button>
+            </div>
+
+            <div class="glassmorphism p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-gray-300 mb-4">Student Counts by Level</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-200">Elementary</h3>
+                        <p class="text-xl text-white" id="elementaryCount">0</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-200">Junior High</h3>
+                        <p class="text-xl text-white" id="juniorHighCount">0</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-200">Senior High</h3>
+                        <p class="text-xl text-white" id="seniorHighCount">0</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-200">College</h3>
+                        <p class="text-xl text-white" id="collegeCount">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glassmorphism p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-gray-300 mb-4">Teacher Data</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="teacherLevel" class="block text-gray-200 text-sm font-bold mb-2">Teacher Level:</label>
+                        <select id="teacherLevel" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                            <option value="elementary">Elementary</option>
+                            <option value="juniorhigh">Junior High</option>
+                            <option value="seniorhigh">Senior High</option>
+                            <option value="college">College</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="teacherName" class="block text-gray-200 text-sm font-bold mb-2">Teacher Name:</label>
+                        <input type="text" id="teacherName" placeholder="Enter teacher name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="teacherId" class="block text-gray-200 text-sm font-bold mb-2">Teacher ID:</label>
+                        <input type="text" id="teacherId" placeholder="Enter teacher ID" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-gray-200 text-sm font-bold mb-2">Subject:</label>
+                        <input type="text" id="subject" placeholder="Enter subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                </div>
+                <button id="saveTeacherData" class="neon-button mt-4">Save Teacher Data</button>
+            </div>
+
+            <div class="glassmorphism p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-gray-300 mb-4">Date Scheduling</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="eventTitle" class="block text-gray-200 text-sm font-bold mb-2">Event Title:</label>
+                        <input type="text" id="eventTitle" placeholder="Enter event title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="eventDate" class="block text-gray-200 text-sm font-bold mb-2">Event Date:</label>
+                        <input type="date" id="eventDate" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="eventTime" class="block text-gray-200 text-sm font-bold mb-2">Event Time:</label>
+                        <input type="time" id="eventTime" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                    <div>
+                        <label for="eventDescription" class="block text-gray-200 text-sm font-bold mb-2">Event Description:</label>
+                        <input type="text" id="eventDescription" placeholder="Enter event description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-white/10 border-white/20">
+                    </div>
+                </div>
+                <button id="saveSchedule" class="neon-button mt-4">Save Schedule</button>
+            </div>
+        </main>
+
+        <footer class="py-8 text-center text-gray-500">
+            <p>&copy; 2024 [School Name]. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        let elementaryStudents = [];
+        let juniorHighStudents = [];
+        let seniorHighStudents = [];
+        let collegeStudents = [];
+        let elementaryTeachers = [];
+        let juniorHighTeachers = [];
+        let seniorHighTeachers = [];
+        let collegeTeachers = [];
+        let schedules = [];
+
+        // Load data from localStorage
+        if (localStorage.getItem('elementaryStudents')) {
+            elementaryStudents = JSON.parse(localStorage.getItem('elementaryStudents'));
+        }
+        if (localStorage.getItem('juniorHighStudents')) {
+            juniorHighStudents = JSON.parse(localStorage.getItem('juniorHighStudents'));
+        }
+        if (localStorage.getItem('seniorHighStudents')) {
+            seniorHighStudents = JSON.parse(localStorage.getItem('seniorHighStudents'));
+        }
+        if (localStorage.getItem('collegeStudents')) {
+            collegeStudents = JSON.parse(localStorage.getItem('collegeStudents'));
+        }
+         if (localStorage.getItem('elementaryTeachers')) {
+            elementaryTeachers = JSON.parse(localStorage.getItem('elementaryTeachers'));
+        }
+        if (localStorage.getItem('juniorHighTeachers')) {
+            juniorHighTeachers = JSON.parse(localStorage.getItem('juniorHighTeachers'));
+        }
+        if (localStorage.getItem('seniorHighTeachers')) {
+            seniorHighTeachers = JSON.parse(localStorage.getItem('seniorHighTeachers'));
+        }
+        if (localStorage.getItem('collegeTeachers')) {
+            collegeTeachers = JSON.parse(localStorage.getItem('collegeTeachers'));
+        }
+        if (localStorage.getItem('schedules')) {
+            schedules = JSON.parse(localStorage.getItem('schedules'));
+        }
+
+        // Update total teacher count
+        function updateTeacherCounts(){
+            document.getElementById('totalTeachers').textContent = elementaryTeachers.length + juniorHighTeachers.length + seniorHighTeachers.length + collegeTeachers.length;
+            document.getElementById('elementaryTeacherCountOverview').textContent = elementaryTeachers.length;
+            document.getElementById('juniorHighTeacherCountOverview').textContent = juniorHighTeachers.length;
+            document.getElementById('seniorHighTeacherCountOverview').textContent = seniorHighTeachers.length;
+            document.getElementById('collegeTeacherCountOverview').textContent = collegeTeachers.length;
+        }
+        updateTeacherCounts();
+
+        // Function to update student counts in the overview
+        function updateStudentCounts() {
+            document.getElementById('totalStudents').textContent = elementaryStudents.length + juniorHighStudents.length + seniorHighStudents.length + collegeStudents.length;
+            document.getElementById('elementaryCount').textContent = elementaryStudents.length;
+            document.getElementById('juniorHighCount').textContent = juniorHighStudents.length;
+            document.getElementById('seniorHighCount').textContent = seniorHighStudents.length;
+            document.getElementById('collegeCount').textContent = collegeStudents.length;
+
+            document.getElementById('elementaryCountOverview').textContent = elementaryStudents.length;
+            document.getElementById('juniorHighCountOverview').textContent = juniorHighStudents.length;
+            document.getElementById('seniorHighCountOverview').textContent = seniorHighStudents.length;
+            document.getElementById('collegeCountOverview').textContent = collegeStudents.length;
+            document.getElementById('upcomingEventsCount').textContent = schedules.length;
+        }
+
+        // Initial update of student counts
+        updateStudentCounts();
+
+
+
+        // Display upcoming events
+        const eventList = document.getElementById('eventList');
+        if (schedules.length > 0) {
+            eventList.innerHTML = schedules.map(event => `<li>${event.title} - ${event.date} ${event.time} (${event.description})</li>`).join('');
+        }
+
+        // Event listener for saving student data
+        document.getElementById('saveStudentData').addEventListener('click', () => {
+            const studentLevel = document.getElementById('studentLevel').value;
+            const studentName = document.getElementById('studentName').value;
+            const studentId = document.getElementById('studentId').value;
+            const grade = document.getElementById('grade').value;
+            const className = document.getElementById('class').value;
+
+            if (studentName && studentId && grade && className && studentLevel) {
+                const newStudent = { name: studentName, id: studentId, grade: grade, class: className };
+                switch (studentLevel) {
+                    case 'elementary':
+                        elementaryStudents.push(newStudent);
+                        localStorage.setItem('elementaryStudents', JSON.stringify(elementaryStudents));
+                        break;
+                    case 'juniorhigh':
+                        juniorHighStudents.push(newStudent);
+                        localStorage.setItem('juniorHighStudents', JSON.stringify(juniorHighStudents));
+                        break;
+                    case 'seniorhigh':
+                        seniorHighStudents.push(newStudent);
+                        localStorage.setItem('seniorHighStudents', JSON.stringify(seniorHighStudents));
+                        break;
+                    case 'college':
+                        collegeStudents.push(newStudent);
+                        localStorage.setItem('collegeStudents', JSON.stringify(collegeStudents));
+                        break;
+                }
+                updateStudentCounts();
+                alert('Student data saved successfully!');
+                document.getElementById('studentLevel').value = 'elementary';
+                document.getElementById('studentName').value = '';
+                document.getElementById('studentId').value = '';
+                document.getElementById('grade').value = '';
+                document.getElementById('class').value = '';
+            } else {
+                alert('Please fill in all fields for student data.');
+            }
+        });
+
+        // Event listener for saving teacher data
+        document.getElementById('saveTeacherData').addEventListener('click', () => {
+            const teacherLevel = document.getElementById('teacherLevel').value;
+            const teacherName = document.getElementById('teacherName').value;
+            const teacherId = document.getElementById('teacherId').value;
+            const subject = document.getElementById('subject').value;
+
+            if (teacherName && teacherId && subject && teacherLevel) {
+                const newTeacher = { name: teacherName, id: teacherId, subject: subject };
+                switch (teacherLevel) {
+                    case 'elementary':
+                        elementaryTeachers.push(newTeacher);
+                        localStorage.setItem('elementaryTeachers', JSON.stringify(elementaryTeachers));
+                        break;
+                    case 'juniorhigh':
+                        juniorHighTeachers.push(newTeacher);
+                        localStorage.setItem('juniorHighTeachers', JSON.stringify(juniorHighTeachers));
+                        break;
+                    case 'seniorhigh':
+                        seniorHighTeachers.push(newTeacher);
+                        localStorage.setItem('seniorHighTeachers', JSON.stringify(seniorHighTeachers));
+                        break;
+                    case 'college':
+                        collegeTeachers.push(newTeacher);
+                        localStorage.setItem('collegeTeachers', JSON.stringify(collegeTeachers));
+                        break;
+                }
+                updateTeacherCounts();
+                alert('Teacher data saved successfully!');
+                document.getElementById('teacherLevel').value = 'elementary';
+                document.getElementById('teacherName').value = '';
+                document.getElementById('teacherId').value = '';
+                document.getElementById('subject').value = '';
+            } else {
+                alert('Please fill in all fields for teacher data.');
+            }
+        });
+
+        // Event listener for saving schedule data
+        document.getElementById('saveSchedule').addEventListener('click', () => {
+            const eventTitle = document.getElementById('eventTitle').value;
+            const eventDate = document.getElementById('eventDate').value;
+            const eventTime = document.getElementById('eventTime').value;
+            const eventDescription = document.getElementById('eventDescription').value;
+
+            if (eventTitle && eventDate && eventTime && eventDescription) {
+                schedules.push({ title: eventTitle, date: eventDate, time: eventTime, description: eventDescription });
+                localStorage.setItem('schedules', JSON.stringify(schedules));
+                alert('Schedule saved successfully!');
+                document.getElementById('eventList').innerHTML = schedules.map(event => `<li>${event.title} - ${event.date} ${event.time} (${event.description})</li>`).join('');
+                document.getElementById('eventTitle').value = '';
+                document.getElementById('eventDate').value = '';
+                document.getElementById('eventTime').value = '';
+                document.getElementById('eventDescription').value = '';
+            } else {
+                alert('Please fill in all fields for the schedule.');
+            }
+        });
+    </script>
+</body>
+</html>
